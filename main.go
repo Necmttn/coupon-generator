@@ -27,16 +27,15 @@ func main() {
 	check(err)
 	defer f.Close()
 	coupons := make(chan string)
-	fmt.Println(*amountOfCoupon)
+	fmt.Println("Amount:", *amountOfCoupon)
+	fmt.Println("Length:", *lengthOfCoupon)
 	for i := 1; i <= *amountOfCoupon; i++ {
 		go func(i int) {
 			coupons <- generateRandomString(*lengthOfCoupon)
 		}(i)
 		writeToFile(f, <-coupons)
 	}
-
-	// cpns := <-coupons
-	// writeToFile(f, cpns)
+	fmt.Println("finished check the path", *pathForFile)
 }
 
 func check(e error) {
@@ -46,9 +45,7 @@ func check(e error) {
 }
 
 func writeToFile(f *os.File, coupon string) {
-	fmt.Printf("wrote")
-	n3, err := f.WriteString(coupon + "\n")
-	fmt.Printf("wrote %d bytes \n", n3)
+	_, err := f.WriteString(coupon + "\n")
 	check(err)
 	f.Sync()
 }

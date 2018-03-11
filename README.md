@@ -26,6 +26,21 @@ Usage of ./coupon-generator:
         Path for Coupon txt file (default "./coupons.txt")
 ```
 
+Example
+
+```
+bHSQGNBI
+wxyAFxcf
+MTiyMTTC
+NiExeewv
+kijQhMsS
+xFCxSlHN
+EnVxVJaP
+RmVIpkDH
+kpmgPePW
+VanrKpaZ
+```
+
 ## Support
 
 Please [open an issue](https://github.com/necmttn/coupon-generator/issues/new) for support.
